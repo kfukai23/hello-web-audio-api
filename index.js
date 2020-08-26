@@ -1,8 +1,8 @@
+// AudioContext を作成
 const audioContext = new AudioContext();
 
-// const audioElement = document.querySelector('audio');
+// Audio オブジェクトを作成し、src にサーバ内の mp3 ファイルを指定
 const audioElement = new Audio();
-audioElement.crossOrigin　=　"anonymous"
 audioElement.src　=　"myCoolTrack.mp3"
 
 // pass it into the audio context
@@ -14,7 +14,6 @@ track.connect(audioContext.destination);
 const playButton = document.querySelector('.tape-controls-play');
 
 playButton.addEventListener('click', function() {
-  console.log(playButton);
     // check if context is in suspended state (autoplay policy)
     if (audioContext.state === 'suspended') {
         audioContext.resume();
